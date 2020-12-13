@@ -11,11 +11,17 @@ module.exports = {
     filename: "bundleVue.js",
   },
   module: {
+<<<<<<< HEAD
     rules: [
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
+=======
+    rules: [{
+        test: /\.(sa|sc|c)ss$/,
+        use: [{
+>>>>>>> df85fafd9a353a0404c2a9b21bd832750e7a8584
             loader: MiniCssExtractPlugin.loader,
             options: {
               hmr: process.env.NODE_ENV === "development",
@@ -28,6 +34,7 @@ module.exports = {
       },
       {
         test: /\.vue$/,
+<<<<<<< HEAD
         use: "vue-loader",
       },
       {
@@ -47,6 +54,20 @@ module.exports = {
             },
           },
         ],
+=======
+        use: "vue-loader"
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        use: [{
+          loader: "url-loader",
+          options: {
+            limit: 10000,
+            name: "[name].[ext]",
+            esModule: false
+          },
+        }, ],
+>>>>>>> df85fafd9a353a0404c2a9b21bd832750e7a8584
       },
     ],
   },
@@ -61,8 +82,12 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "./src/index.html"),
+<<<<<<< HEAD
       filename:
         process.env.NODE_ENV === "production" ? "../index.html" : "index.html",
+=======
+      filename: process.env.NODE_ENV === "production" ? "../index.html" : "index.html",
+>>>>>>> df85fafd9a353a0404c2a9b21bd832750e7a8584
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -72,6 +97,11 @@ module.exports = {
   devServer: {
     port: 4000,
     hot: true,
+<<<<<<< HEAD
     clientLogLevel: "none",
   },
 }
+=======
+  },
+}
+>>>>>>> df85fafd9a353a0404c2a9b21bd832750e7a8584
